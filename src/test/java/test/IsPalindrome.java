@@ -1,13 +1,14 @@
-package simpleStringPracticePackage
+package test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class IsAnagram {
+public class IsPalindrome {
 
     @Test
     public void test1() {
         String input1 = "madam";
         Assert.assertTrue(isThisTextPalindrome(input1));
+        System.out.println("Test hem prasad passed");
     }
 
     public boolean isThisTextPalindrome(String inputText) {
