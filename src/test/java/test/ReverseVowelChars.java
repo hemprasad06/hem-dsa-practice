@@ -3,7 +3,8 @@ package test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ReverseVowelChars() {
+public class ReverseVowelChars()
+{
     @Test
     public void test1() {
         String input = "programming";
