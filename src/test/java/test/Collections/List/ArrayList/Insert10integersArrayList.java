@@ -3,7 +3,7 @@ package test.Collections.List.ArrayList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class insert10integersArrayList {
+public class Insert10integersArrayList {
         public static void main (String[]args)
         {
             List<Integer> insertedList = new ArrayList<Integer>();
