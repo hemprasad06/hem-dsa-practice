@@ -1,4 +1,4 @@
-/*package test;
+package test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,16 +9,16 @@ public class ReverseVowelChars
     public void test1() {
         String input = "programming";
         String output = "prigrammong";
-        Assert.assertTrue(checkReversingVowels(input), output);
+        Assert.assertEquals(checkReversingVowels(input), output);
     }
-
+    @Test
     public void test2() {
         String input = "global";
         String output = "glabol";
-        Assert.assertTrue(checkReversingVowels(input), output);
+        Assert.assertEquals(checkReversingVowels(input), output);
     }
 
-    private static boolean checkReversingVowels(String input) {
+    public String checkReversingVowels(String input) {
         char[] inputArray = input.toCharArray();
         int left = 0;
         int right = inputArray.length - 1;
@@ -31,14 +31,18 @@ public class ReverseVowelChars
                 char temp = inputArray[left];
                 inputArray[left] = inputArray[right];
                 inputArray[right] = temp;
+                left++;
+                right--;
             }
         }
+            return new String(inputArray);
+        }
+
 
         public boolean isVowel ( char ch)
         {
-            return left == 'a' || left == 'e' || left == 'i' || left == 'o' || left == 'u';
+            return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
         }
 
     }
 
-}*/
