@@ -3,6 +3,8 @@ package test.day1;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 public class TwoSums
 {
     @Test
@@ -10,21 +12,18 @@ public class TwoSums
     {
     int[] input = {2,2,2,5,5};
     int target = 7;
+    int[] result = twoSum(input, target);
     int[] expected = {0,3};
-        Assert.assertEquals(twoSum(input,target), expected);
+    Assert.assertTrue(Arrays.equals(expected,result));
     }
-    public int[] twoSum(int[] input, int target)
-    {
-        for(int i=0;i<=input.length-1;i++)
-        {
-            for(int j=0;j<input.length-1;j++)
-            {
-                if ((input[j] + input[j + 1]) == target)
-                    return new int[]{j, j + 1};
-                else j++;
+    public int[] twoSum(int[] input, int target) {
+        for (int i = 0; i <= input.length; i++) {
+
+            for (int j = i + 1; j < input.length; j++) {
+                if ((input[i] + input[j]) == target)
+                    return new int[]{i, j};
             }
         }
         return null;
-
     }
 }
