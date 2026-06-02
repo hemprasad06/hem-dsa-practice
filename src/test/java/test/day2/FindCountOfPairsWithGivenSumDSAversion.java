@@ -29,18 +29,6 @@ public class FindCountOfPairsWithGivenSumDSAversion
 
     private int findAllPairs(int[] input, int target)
     {
-        Map<Integer,Integer> mapped = new HashMap<>();
-                int count =0;
-        for(int num:input)
-        {
-        int complement = target-num;
-            if(mapped.containsKey(complement))
-            {
-                count += mapped.get(complement);
-            }
-            mapped.put(num,mapped.getOrDefault(num,0)+1);
-        }
-        return count;
-
+//removing the method for practicing on june 03
     }
 }
