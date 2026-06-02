@@ -3,6 +3,7 @@ package test.day2;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Day2Practice {
@@ -27,7 +28,7 @@ public class Day2Practice {
 
     public int day2Practice(int[] input, int target)
     {
-        Map<Integer,Integer> mapped = new Hashmap<>();
+        Map<Integer,Integer> mapped = new HashMap<>();
         int count = 0;
         for(int num: input)
         {
@@ -36,7 +37,8 @@ public class Day2Practice {
             {
                 count+=mapped.get(complement);
             }
+            mapped.put(num, mapped.getOrDefault((num),0+1));
         }
-
+        return count;
     }
 }
