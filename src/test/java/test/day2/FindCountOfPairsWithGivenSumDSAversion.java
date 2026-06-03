@@ -3,8 +3,9 @@ package test.day2;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
+
 
 public class FindCountOfPairsWithGivenSumDSAversion
 {
@@ -29,6 +30,17 @@ public class FindCountOfPairsWithGivenSumDSAversion
 
     private int findAllPairs(int[] input, int target)
     {
-//removing the method for practicing on june 03
+        Map<Integer, Integer> map = new HashMap<>();
+        int count =0;
+        for(int num : input)
+        {
+            int complement = target - num;
+            if(map.containsKey(complement))
+            {
+                count+=map.get(complement);
+            }
+            map.put(num, map.getOrDefault(num,0) + 1);
+        }
+            return count;
     }
 }
