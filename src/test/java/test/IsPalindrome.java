@@ -15,4 +15,5 @@ public class IsPalindrome {
         String reversed = new StringBuilder(inputText).reverse().toString();
         return reversed.equals(inputText);
     }
+
 }
